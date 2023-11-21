@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.userProfileContainerAccess {
+    animation: fadeInProfile 0.5s ease-out forwards;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1a1a1a;
+    /* Cambia este color según el diseño */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Toma toda la altura de la pantalla */
+}
+
+.profileCard {
+    background-color: #262626;
+    /* Cambia este color según el diseño */
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: white;
+    animation: slideUpProfile 0.5s ease-out forwards;
+    animation-delay: 0.5s; /* Espera a que la animación del contenedor termine */
+}
+
+.profileImageContainer img, .profileIconContainer {
+    /* Estilos comunes para la imagen y el contenedor del ícono */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ffa500;
+    margin-bottom: 20px;
+    object-fit: cover;
+    animation: popInProfile 0.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.profileIconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #262626; /* O cualquier color de fondo que desees */
+}
+
+.profileIcon {
+    font-size: 40px; /* ajusta según el tamaño que prefieras */
+    color: white;
+}
+
+
+
+
+.profileIconContainer {
+    border: 4px solid #ffa500; /* Borde como el de la imagen */
+    border-radius: 50%; /* Redondeado */
+    display: inline-flex; /* Centrar contenido */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Asegúrate de que el icono de usuario tenga el tamaño adecuado */
+.profileIcon {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+
+.profileInfo h1 {
+    margin: 0;
+    color: #ffa500;
+    /* Cambia este color según el diseño */
+}
+
+.profileInfo h2 {
+    margin: 0;
+    color: #ffa500;
+    /* Cambia este color según el diseño */
+}
+
+.profileInfo p {
+    color: #d3d3d3;
+}
+
+.favorites {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ffa500;
+    /* Cambia este color según el diseño */
+}
+
+.heart {
+    color: red;
+    font-size: 24px;
+}
+
+/*Boton para cambiar constraseña*/
+.settingsButton {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #ffa500;
+    /* O el color que prefieras para el botón */
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    /* Tamaño del botón */
+    height: 60px;
+    /* Tamaño del botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    animation: popInProfile 0.5s ease-out forwards;
+    animation-delay: 1.2s;
+    /**/
+    
+}
+
+.settingsButton:hover {
+    background-color: #e69500;
+    /* Color cuando se pasa el mouse por encima */
+}
+
+.settingsButton svg {
+    color: white;
+    /* Color del icono */
+    font-size: 30px;
+    /* Tamaño del icono */
+}
+
+/* Botón para volver a la página anterior */
+.backButtonProfile {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ffa500;
+    /* Color del botón */
+    color: white;
+    /* Color del ícono */
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: popInProfile 0.5s ease-out forwards;
+    animation-delay: 1.2s; 
+}
+
+.backButtonProfile:hover {
+    background-color: #e69500;
+    /* Color al pasar el mouse */
+}
+
+.backButtonProfile i {
+    font-size: 20px;
+    /* Tamaño del ícono */
+}
+
+
+/*DISEÑO DEL BOTON ACTUALIZAR FOTO*/
+
+.updatePhotoButton {
+    background-color: #ffa500; /* Color del fondo del botón */
+    color: white; /* Color del texto */
+    font-weight: bold;
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 20px; /* Margen superior */
+    margin-bottom: 20px;
+    cursor: pointer; /* Cursor en forma de mano */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.updatePhotoButton:hover {
+    background-color: #e69500; /* Color al pasar el ratón por encima */
+}
+
+/*Ventana para cambiar constraseña*/
+.passwordChangeContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333; /* Cambia según tu esquema de colores */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: calc(100% - 40px); /* Ajusta el ancho al de la tarjeta */
+    max-width: 300px; /* Máximo ancho de los inputs */
+}
+
+.passwordInput {
+    width: calc(100% - 20px); /* Ajusta el ancho al contenedor */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd; /* O cualquier color que prefieras */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+.confirmPasswordButton {
+    background-color: #ffa500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px; /* Tamaño de la fuente */
+    width: 100%; /* Hacer que ocupe todo el ancho */
+    font-weight: bold;
+    
+}
+
+.confirmPasswordButton:hover {
+    background-color: #e69500;
+}
+
+.cancelPasswordButton {
+    background-color: #777; /* Color de fondo para cancelar */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    width: 100%; /* Ocupar todo el ancho */
+    margin-top: 10px; /* Espacio arriba del botón */
+    margin-bottom: 15px;
+}
+
+.cancelPasswordButton:hover {
+    background-color: #555; /* Color al pasar el ratón por encima */
+}
+
+
+
+
+@keyframes fadeInProfile {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpProfile {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popInProfile {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

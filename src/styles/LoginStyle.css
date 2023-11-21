@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.loginContainer {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #322F2F;
+}
+
+.wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #322F2F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container {
+    flex: 1;
+    background: url('imagLo.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.login-title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 100;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-title2 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #FEA033;
+    background-color: transparent;
+    color: #FEA033;
+    font-size: 18px;
+}
+
+.login-input::placeholder {
+    color: #FEA033;
+    opacity: 0.7;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FEA033;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #f78c00;
+}
+
+.login-link {
+    margin-top: 15px;
+    color: #FEA033;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.login-link:hover {
+    color: #f78c00;
+}
+
+.back-button {
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 12px 25px;
+    background-color: #757575;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    animation: runInFromRight 2s forwards;
+}
+
+.back-button:hover {
+    background-color: #5A5A5A;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animación de correr */
+@keyframes runInFromRight {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.wrapper, .login-container {
+    animation: fadeIn 2s forwards;
+}
+
+.login-title, .login-title2 {
+    animation: popIn 2s forwards;
+}
+
+.login-input {
+    animation: fadeIn 2.5s forwards;
+}
+
+.login-button {
+    animation: popIn 3.5s forwards;
+}

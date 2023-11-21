@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #322F2F;
+}
+*/
+
+.registerContainer{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #322F2F;
+
+}
+
+.wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.register-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #322F2F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container2 {
+    flex: 1;
+    background: url('imgRe.webp') no-repeat center center;
+    /* Cambia 'path-to-your-image.jpg' a la ruta de tu imagen */
+    background-size: cover;
+    position: relative;
+}
+
+
+.register-title2 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 100;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.register-title2 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.register-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #FEA033;
+    background-color: transparent;
+    color: #FEA033;
+    font-size: 18px;
+}
+
+.register-input::placeholder {
+    color: #FEA033;
+    opacity: 0.7;
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FEA033;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.register-button:hover {
+    background-color: #f78c00;
+}
+
+.register-link {
+    margin-top: 15px;
+    color: #FEA033;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.register-link:hover {
+    color: #f78c00;
+}
+
+.back-button {
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 12px 25px;
+    background-color: #757575;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    animation: runInFromRight 2s forwards;
+}
+
+.back-button:hover {
+    background-color: #5A5A5A;
+}
+
+
+
+
+.terms-container {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.terms-checkbox {
+    margin-right: 5px;
+}
+
+.terms-label {
+    font-size: 14px;
+}
+
+/* Estilo para la etiqueta del link de los términos y condiciones */
+.terms-label a {
+    color: #FEA033;
+    text-decoration: none;
+}
+
+.terms-label a:hover {
+    color: #f78c00;
+}
+
+
+/* Animaciones*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animación de correr */
+@keyframes runInFromRight {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Añade animación a los contenedores principales */
+.wrapper,
+.register-container {
+    animation: fadeIn 2s forwards;
+}
+
+/* Añade animación a los títulos */
+.register-title,
+.register-title2 {
+    animation: popIn 1.2s forwards;
+}
+
+/* Añade animación a los campos de entrada */
+.register-input {
+    animation: fadeIn 1.5s forwards;
+}
+
+/* Añade animación al botón de registro */
+.register-button2 {
+    animation: popIn 5s forwards;
+}
+
+/* Añade animación al enlace de registro */
+.register-link {
+    animation: fadeIn 2s forwards;
+}
+
+
+
+/* Añade animación al contenedor de términos */
+.terms-container {
+    animation: fadeIn 3s forwards;
+}

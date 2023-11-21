@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Estilo para el fondo de la página */
+.homePageContainer {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #322F2F;
+    min-height: 100vh; /* Altura completa */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Estilos para el header, incluyendo el menú desplegable */
+.headerHome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #322F2F;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; /* Para el posicionamiento absoluto del título */
+}
+
+.headerTitle {
+    color: white; /* Letras blancas */
+    position: absolute; /* Posicionamiento absoluto */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajuste fino para centrar exactamente el texto */
+    margin: 0; /* Quitar los márgenes por defecto del h1 */
+    font-size: 1.5rem; /* Ajusta el tamaño de la fuente según lo necesites */
+    font-weight: 300; /* Peso de fuente más fino, asegúrate de que tu fuente lo soporte */
+}
+
+
+/* Estilo para el perfil de usuario */
+.userProfile img {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+
+.userProfileContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.userProfile:hover .userProfileDropdown {
+    display: block; /* Mostrar el menú al pasar el mouse */
+}
+
+.userProfileDropdown {
+    display: none; /* Ocultar inicialmente */
+    position: absolute;
+    background-color: #ffffff; /* Fondo blanco o cualquier color que prefieras */
+    min-width: 200px; /* Ancho mínimo más grande */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    z-index: 1;
+    right: 0;
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Para mantener los bordes redondeados */
+}
+
+.userProfileDropdown button {
+    background: #ffffff; /* Fondo del botón */
+    border: none;
+    cursor: pointer;
+    padding: 15px 20px; /* Padding más grande */
+    text-align: left;
+    width: 100%;
+    font-size: 20px; /* Tamaño de fuente más grande */
+    color: #090909; /* Color de texto */
+    border-bottom: 1px solid #ddd; /* Borde para separar opciones */
+    
+}
+
+.userProfileDropdown button:hover {
+    background-color: #ffa500; /* Cambio de color al pasar el mouse */
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+/* Estilo para el menú desplegable */
+/* Estilo para el menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent; /* Remueve el color de fondo */
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Remueve el padding si solo quieres el icono */
+    font-size: 35px; /* Ajusta el tamaño del icono */
+    color: white; /* Cambia el color del icono aquí si es necesario */
+}
+
+/* Estilo para el contenido desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000; /* Fondo negro */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px; /* Bordes redondeados para un aspecto moderno */
+}
+
+/* Estilo para los enlaces dentro del menú desplegable */
+.dropdown-content a {
+    color: white; /* Letras blancas */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    text-align: left; /* Alineación del texto a la izquierda */
+    transition: background-color 0.3s; /* Transición suave para el cambio de fondo */
+}
+
+/* Cambia el fondo de los items al pasar el mouse */
+.dropdown-content a:hover {
+    background-color: #555; /* Fondo más oscuro al pasar el mouse */
+}
+
+/* Muestra el contenido desplegable al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Estilo para la cuadrícula de recetas */
+.recipeGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2.5rem;
+}
+
+/* Estilo para las tarjetas de recetas */
+.recipeCard {
+    background-color: #464342;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.recipeCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipeCard h3 {
+    margin: 0.8rem;
+    font-size: 1.1rem;
+    text-align: center;
+}

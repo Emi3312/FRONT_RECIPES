@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.landingPageContainer {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('imagLa.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh; /* Asegúrate de que el contenedor tenga altura */
+    overflow: hidden;
+}
+/*
+.landingPageContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.10);
+    z-index: -1;
+}
+*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 20px;
+    z-index: 1; /* Añadir esto */
+    position: relative; /* Y esto para que el z-index funcione */
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; /* Añadir esto */
+    position: relative; 
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.navigation ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.navigation a:hover {
+    background-color: white;
+    color: black;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+    text-align: center;
+    color: white;
+    margin-top: -50px;
+}
+
+.content h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.register-btn, .login-btn {
+    
+    
+    border: none;
+    padding: 17px 35px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.register-btn:hover, .login-btn:hover {
+    background-color: white;
+    color: black;
+}
+
