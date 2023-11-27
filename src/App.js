@@ -10,6 +10,7 @@ import MakeRecipe from './components/MakeRecipe';
 import AdminRecipes from './components/AdminRecipes';
 import FavoriteRecipes from './components/FavoriteRecipes';
 import Categories from './components/Categories';
+import Ingredients from './components/Ingredients';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/adminRecipes" element={<AdminRecipes />} />
         <Route path="/favoriteRecipes" element={<FavoriteRecipes/>} />
         <Route path="/categories" element={<Categories/>} />
+        <Route path="/ingredients" element={<Ingredients/>} />
       </Routes>
     </Router>
   );

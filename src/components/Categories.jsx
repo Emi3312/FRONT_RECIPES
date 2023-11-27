@@ -1,9 +1,10 @@
-// Categories.jsx
 
 import React, { useState, useEffect } from 'react';
-import '../styles/CategoriesStyle.css'; // Asegúrate de crear este archivo CSS
+import '../styles/CategoriesStyle.css'; 
+import { useNavigate } from 'react-router-dom';
 
 function Categories() {
+    const navigate = useNavigate();
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -15,8 +16,15 @@ function Categories() {
             .catch(error => console.error('Error al obtener categorías:', error));
     }, []);
 
+    const handleGoBack = () => {
+        navigate(-1);
+    };
+
     return (
         <div className="categoriesContainer">
+            <button className="backButtonProfile" onClick={handleGoBack}>
+                <i className="fas fa-arrow-left"></i>
+            </button>
             {categories.map(category => (
                 <div key={category.id_category} className="categoryCard">
                     <img src={`data:image/jpeg;base64,${category.PHOTO}`} alt={category.name} className="categoryImage"/>

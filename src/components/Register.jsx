@@ -57,8 +57,19 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!username || !fullName || !email || !password) {
+      alert("Por favor, completa todos los campos.");
+      return;
+    }
+
     if (!isTermsAccepted) {
       alert("Debes aceptar los términos y condiciones.");
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      alert("La contraseña debe tener al menos 8 caracteres, una mayúscula y dos números.");
       return;
     }
 
@@ -78,6 +89,14 @@ function Register() {
       alert("Error en el registro.");
     }
   };
+
+  const validatePassword = (password) => {
+    const hasEightCharacters = password.length >= 8;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasTwoDigits = (password.match(/\d/g) || []).length >= 2;
+  
+    return hasEightCharacters && hasUpperCase && hasTwoDigits;
+  }
 
   return (
     <div className='registerContainer'>

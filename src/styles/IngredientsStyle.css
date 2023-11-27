@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+
+.mainContainerIngredient {
+    background-color: #322F2F; /* Fondo oscuro para toda la página */
+    min-height: 100vh; /* Asegura que el fondo cubra toda la altura visible */
+    padding: 20px 0; /* Ajusta el padding según necesites */
+}
+
+.ingredientsContainer {
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    background-color: #322F2F; /* Fondo oscuro para resaltar las tarjetas */
+    color: white;
+}
+
+.ingredientCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.ingredientCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ingredientImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+}
+
+.ingredientCard:hover .ingredientImage {
+    transform: scale(1.05);
+}
+
+.ingredientNameView, .ingredientDescription {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+.ingredientNameView {
+    bottom: 70px;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #FEA033; /* Color dorado para el título */
+}
+
+.ingredientDescription {
+    display: none; /* Ocultar la descripción inicialmente */
+    bottom: 20px;
+    font-size: 1em;
+    font-weight: 300;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.ingredientCard:hover .ingredientDescription {
+    display: block; /* Mostrar descripción al pasar el mouse */
+}
+
+/* Efecto de superposición oscurecida al pasar el mouse */
+.ingredientCard:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4); /* Superposición más oscura al pasar el mouse */
+    border-radius: 20px;
+}
+
+.searchInputIngredient {
+    font-size: 1em;
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+    width: 60%;
+    max-width: 400px;
+    border: 2px solid #FEA033;
+    border-radius: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    outline: none;
+    background-color: #322F2F; /* Fondo oscuro para coincidir con el contenedor */
+    color: white; /* Texto en color blanco para mayor visibilidad */
+}
+
+.searchInputIngredient::placeholder {
+    color: #FEA033; /* Color para el texto del placeholder */
+}
+
+.searchInputIngredient:focus {
+    border-color: #F5A623;
+}

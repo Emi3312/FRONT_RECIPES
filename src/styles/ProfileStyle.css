@@ -244,6 +244,78 @@
 }
 
 
+.deleteAccountButton {
+    background-color: #ff4444; /* Rojo para indicar una acción de eliminación */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.deleteAccountButton:hover {
+    background-color: #cc0000; /* Rojo más oscuro al pasar el ratón */
+}
+
+/* Modal de confirmación */
+.deleteConfirmationModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background-color: #262626;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.modalText {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.modalConfirmButton, .modalCancelButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.modalConfirmButton {
+    background-color: #ff4444; /* Rojo para confirmar */
+    color: white;
+}
+
+.modalConfirmButton:hover {
+    background-color: #cc0000; /* Rojo más oscuro */
+}
+
+.modalCancelButton {
+    background-color: #777; /* Gris para cancelar */
+    color: white;
+}
+
+.modalCancelButton:hover {
+    background-color: #555; /* Gris más oscuro */
+}
+
+
+
 
 
 @keyframes fadeInProfile {

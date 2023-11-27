@@ -16,7 +16,7 @@ export default Home;
 
 
 import React from 'react';
-import '../styles/HomeStyle.css' 
+import '../styles/HomeStyle.css'
 import { Link, useNavigate } from 'react-router-dom';
 //import tacoImagen from '../styles/ImagesPruebas/taco.jpeg'
 //import usuarioImagen from '../styles/ImagesPruebas/user.png'
@@ -27,6 +27,8 @@ function HomePage() {
     const [recipes, setRecipes] = useState([]);
     const [user, setUser] = useState({});
     const navigate = useNavigate();
+    const [showSearch, setShowSearch] = useState(false); // Nuevo estado para mostrar el campo de búsqueda
+    const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
 
 
     useEffect(() => {
@@ -47,6 +49,16 @@ function HomePage() {
         navigate('/');
     };
 
+    // Función para filtrar recetas
+    const filteredRecipes = recipes.filter(recipe =>
+        recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+     // Función para recargar la página
+     const reloadPage = () => {
+        window.location.reload();
+    };
+
     return (
         <div className="homePageContainer">
             {/* HEADER Y MENU DESPLEGABLE */}
@@ -61,8 +73,8 @@ function HomePage() {
                         <div className="dropdown-content">
                             <Link to="/profile">Mi perfil</Link>
                             <Link to="/adminRecipes">Mis recetas</Link>
-                            <Link to="/Ingredients">Ingredientes</Link>
-                            <Link to="/categories">Categorias</Link>
+                            <Link to="/ingredients">Ingredientes</Link>
+                            <Link to="/categories">Categorías</Link>
                             <Link to="/makeRecipe">Crear receta </Link>
                             <Link to="/favoriteRecipes">Favoritos </Link>
                         </div>
@@ -70,26 +82,41 @@ function HomePage() {
                 </nav>
 
                 {/* Titulo del sitio en el centro */}
-                <h1 className="headerTitle">Gourmet en casa</h1>
+                <h1 className="headerTitle" onClick={reloadPage}>Gourmet en casa</h1>
 
-                <div className="userProfileContainer">
-                    <div className="userProfile">
-                        {user.photo ? (
-                            <img src={`data:image/jpeg;base64,${user.photo}`} alt={`${user.name}'s Profile`} />
-                        ) : (
-                            <i className="fas fa-user" style={{ fontSize: '40px', color: 'white' }}></i>
-                        )}
-                        <div className="userProfileDropdown">
-                            <button onClick={handleLogout}>Cerrar sesión</button>
+                <div className="searchAndProfile">
+                    {showSearch && (
+                        <input
+                            type="text"
+                            placeholder="Buscar receta..."
+                            className="searchInputRecipe"
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                    )}
+                    <i className="fas fa-search searchIcon" onClick={() => setShowSearch(!showSearch)}></i>
+
+
+                    <div className="userProfileContainer">
+                        <div className="userProfile">
+                            {user.photo ? (
+                                <img src={`data:image/jpeg;base64,${user.photo}`} alt={`${user.name}'s Profile`} />
+                            ) : (
+                                <i className="fas fa-user" style={{ fontSize: '40px', color: 'white' }}></i>
+                            )}
+
+                            <div className="userProfileDropdown">
+                                <button onClick={handleLogout}>Cerrar sesión</button>
+                            </div>
+
                         </div>
                     </div>
-                </div>
 
+                </div>
 
             </header>
             {/* Menú desplegable */}
             <main className="recipeGrid">
-                {recipes.map(recipe => (
+                {filteredRecipes.map(recipe => (
                     <Link to={`/recipe/${recipe.id_recipe}`} key={recipe.id_recipe} className="recipeCard">
                         <img src={`data:image/jpeg;base64,${recipe.photo}`} alt={recipe.name} />
                         <h3>{recipe.name}</h3>

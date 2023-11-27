@@ -6,6 +6,7 @@ function UserProfile() {
     const navigate = useNavigate();
     const [userData, setUserData] = useState({});
     const [selectedFile, setSelectedFile] = useState(null);
+    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
     //Change Password
     const [showChangePassword, setShowChangePassword] = useState(false);
@@ -20,11 +21,41 @@ function UserProfile() {
         }
     }, []);
 
+
+
+    const handleDeleteUser = async () => {
+        try {
+            const response = await fetch('http://localhost:3001/user/me/delete', {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+
+            if (response.ok) {
+                alert("Cuenta eliminada con éxito.");
+                navigate('/');
+            } else {
+                alert("Error al eliminar la cuenta.");
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+
+
     const handleChangePassword = async () => {
         if (newPassword !== confirmPassword) {
             alert('Las contraseñas no coinciden');
             return;
         }
+
+        if (!validatePassword(newPassword)) {
+            alert("La contraseña debe tener al menos 8 caracteres, una mayúscula y dos números.");
+            return;
+        }
+
         try {
             const response = await fetch('http://localhost:3001/user/changePassword', {
                 method: 'POST',
@@ -114,6 +145,15 @@ function UserProfile() {
         }
     };
 
+    const validatePassword = (password) => {
+        const hasEightCharacters = password.length >= 8;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasTwoDigits = (password.match(/\d/g) || []).length >= 2;
+
+        return hasEightCharacters && hasUpperCase && hasTwoDigits;
+    }
+
+
     return (
         <div className="userProfileContainerAccess">
             <button className="backButtonProfile" onClick={handleGoBack}>
@@ -140,45 +180,60 @@ function UserProfile() {
                     <h1>{userData.name}</h1>
                     <h2>{userData.last_name}</h2>
                     <p>{userData.email}</p>
-                    
+
                 </div>
                 <button className="settingsButton" onClick={() => setShowChangePassword(!showChangePassword)}>
                     <i className="fas fa-key"></i>
                 </button>
 
-                
+                <button className="deleteAccountButton" onClick={() => setShowDeleteConfirmation(true)}>Eliminar Cuenta</button>
+
+                {showDeleteConfirmation && (
+                    <div className="deleteConfirmationModal">
+                        <div className="modalContent">
+                            <p className="modalText">¿Estás seguro de querer eliminar tu cuenta?</p>
+                            <button className="modalConfirmButton" onClick={handleDeleteUser}>Sí, eliminar</button>
+                            <button className="modalCancelButton" onClick={() => setShowDeleteConfirmation(false)}>No, cancelar</button>
+                        </div>
+                    </div>
+                )}
+
+
 
             </div>
 
 
             {showChangePassword && (
-                    <div className="passwordChangeContainer">
+                <div className="passwordChangeContainer">
 
-                        <input
-                            type="password"
-                            placeholder="Contraseña actual"
-                            value={currentPassword}
-                            onChange={(e) => setCurrentPassword(e.target.value)}
-                            className="passwordInput"
-                        />
-                        <input
-                            type="password"
-                            placeholder="Nueva contraseña"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
-                            className="passwordInput"
-                        />
-                        <input
-                            type="password"
-                            placeholder="Confirmar nueva contraseña"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="passwordInput"
-                        />
-                        <button className="cancelPasswordButton" onClick={handleCancelChangePassword}>Cancelar</button>
-                        <button onClick={handleChangePassword} className="confirmPasswordButton">Confirmar cambio</button>
-                    </div>
-                )}
+                    <input
+                        type="password"
+                        placeholder="Contraseña actual"
+                        value={currentPassword}
+                        onChange={(e) => setCurrentPassword(e.target.value)}
+                        className="passwordInput"
+                    />
+                    <input
+                        type="password"
+                        placeholder="Nueva contraseña"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                        className="passwordInput"
+                    />
+                    <input
+                        type="password"
+                        placeholder="Confirmar nueva contraseña"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        className="passwordInput"
+                    />
+                    <button className="cancelPasswordButton" onClick={handleCancelChangePassword}>Cancelar</button>
+                    <button onClick={handleChangePassword} className="confirmPasswordButton">Confirmar cambio</button>
+                </div>
+            )}
+
+
+
         </div>
     );
 }

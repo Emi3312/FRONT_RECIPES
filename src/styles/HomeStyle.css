@@ -89,7 +89,7 @@
 
 
 
-/* Estilo para el menú desplegable */
+
 /* Estilo para el menú desplegable */
 .dropdown {
     position: relative;
@@ -175,4 +175,29 @@
     text-align: center;
     text-decoration: none;
     border-bottom: none;
+}
+
+
+.searchAndProfile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.searchIcon {
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.searchInputRecipe {
+    font-size: 1em;
+    padding: 5px 10px;
+    border: 2px solid #FEA033;
+    border-radius: 10px;
+    background-color: white;
+    color: #322F2F;
+    outline: none;
+    transition: width 0.3s ease;
+    width: 250px;
 }
