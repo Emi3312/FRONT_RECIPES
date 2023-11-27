@@ -16,7 +16,7 @@ export default Home;
 
 
 import React from 'react';
-import '../styles/HomeStyle.css' // You'll need to create this CSS file
+import '../styles/HomeStyle.css' 
 import { Link, useNavigate } from 'react-router-dom';
 //import tacoImagen from '../styles/ImagesPruebas/taco.jpeg'
 //import usuarioImagen from '../styles/ImagesPruebas/user.png'
@@ -60,10 +60,11 @@ function HomePage() {
                         </button>
                         <div className="dropdown-content">
                             <Link to="/profile">Mi perfil</Link>
-                            <Link to="/recipes">Mis recetas</Link>
+                            <Link to="/adminRecipes">Mis recetas</Link>
                             <Link to="/Ingredients">Ingredientes</Link>
-                            <Link to="/Categories">Categorias</Link>
-                            <Link to="/recipeTest">Test recipe</Link>
+                            <Link to="/categories">Categorias</Link>
+                            <Link to="/makeRecipe">Crear receta </Link>
+                            <Link to="/favoriteRecipes">Favoritos </Link>
                         </div>
                     </div>
                 </nav>
@@ -89,12 +90,12 @@ function HomePage() {
             {/* Menú desplegable */}
             <main className="recipeGrid">
                 {recipes.map(recipe => (
-                    <div key={recipe.id_recipe} className="recipeCard">
-                        {/* Usar directamente la imagen en formato base64 */}
+                    <Link to={`/recipe/${recipe.id_recipe}`} key={recipe.id_recipe} className="recipeCard">
                         <img src={`data:image/jpeg;base64,${recipe.photo}`} alt={recipe.name} />
                         <h3>{recipe.name}</h3>
-                    </div>
+                    </Link>
                 ))}
+
             </main>
         </div>
     );

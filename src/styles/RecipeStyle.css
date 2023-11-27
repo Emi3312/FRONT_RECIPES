@@ -16,6 +16,37 @@
     background-position: center;
 }
 
+
+.backButtonRecipe {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    color: white;
+    border: 1px solid #ffa500; /* Borde sutil */
+    padding: 10px 20px;
+    border-radius: 8px; /* Bordes más redondeados */
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold; /* Texto en negrita */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+    display: flex; /* Alineación de ícono y texto */
+    align-items: center; /* Centrado vertical de los elementos */
+    gap: 5px; /* Espacio entre ícono y texto */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para efectos */
+}
+
+.backButtonRecipe:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Oscurecer al pasar el cursor */
+    transform: scale(1.05); /* Ligeramente más grande al pasar el cursor */
+}
+
+.backButtonRecipe:before {
+    content: '←'; /* Ícono de flecha */
+    font-size: 20px; /* Tamaño del ícono */
+}
+
+
 .recipeDetails {
     width: 60%;
     display: flex;
@@ -24,6 +55,78 @@
     overflow-y: auto; /* Permite desplazarse si el contenido es muy largo */
     background: #333; /* Fondo oscuro para los detalles */
 }
+
+.createdByUser {
+    margin: 10px 0;
+    color: #ffa500; /* Color para destacar */
+    font-style: italic; /* Estilo cursiva para diferenciar */
+    font-size: 1.2em; /* Tamaño del texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra de texto */
+    padding: 5px; /* Espaciado interno */
+    border-bottom: 2px solid #ffa500; /* Subrayado decorativo */
+    display: inline-block; /* Alineación en bloque para bordes y relleno */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.createdByUser:hover {
+    color: #ffddaa; /* Cambiar color al pasar el cursor */
+    transform: scale(1.05); /* Ligeramente más grande al pasar el cursor */
+}
+
+
+/* Estilos para el nombre de la categoría */
+.categoryNameRecipe {
+    margin: 10px 0;
+    color: #e0e0e0; /* Color suave para diferenciar de createdByUser */
+    font-size: 1.1em; /* Tamaño ligeramente menor que createdByUser */
+    font-weight: bold; /* Texto en negrita para resaltar */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra de texto suave */
+    padding: 3px; /* Espaciado interno menor */
+    border-left: 4px solid #ffa500; /* Borde izquierdo como elemento decorativo */
+    display: inline-block; /* Alineación en bloque para bordes y relleno */
+    background-color: rgba(255, 165, 0, 0.1); /* Fondo ligero para destacar */
+    border-radius: 3px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.categoryNameRecipe:hover {
+    color: #ffd700; /* Cambiar color al pasar el cursor */
+    background-color: rgba(255, 215, 0, 0.2); /* Fondo más intenso al pasar el cursor */
+    transform: translateY(-2px); /* Desplazamiento hacia arriba al pasar el cursor */
+}
+
+.recipeHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.likeSection {
+    display: flex;
+    align-items: center;
+    font-size: 25px; /* Ajusta el tamaño según sea necesario */
+}
+
+.heartIcon {
+    font-size: 40px;
+    cursor: pointer;
+    color: #ccc;
+    margin-right: 10px;
+}
+
+.heartIcon.liked {
+    color: red;
+}
+
+.likesCount {
+    font-size: 22px; /* Ajusta el tamaño según sea necesario */
+    color: #fff;
+}
+
+
+
+
+
 
 .recipeDetails h1 {
     font-size: 3em;

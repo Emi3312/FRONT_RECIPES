@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+/* Estilos para la página de recetas favoritas */
+
+.favoriteRecipesContainer {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #322F2F; /* Fondo oscuro */
+    min-height: 100vh; /* Altura mínima para cubrir la pantalla */
+}
+
+.favoriteRecipesTitle {
+    color: #ffa500; /* Un color dorado para el título */
+    margin-bottom: 30px;
+    font-size: 2.8em;
+    
+}
+
+.favoriteRecipesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Diseño de cuadrícula adaptable */
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px; /* Máximo ancho de la lista */
+}
+
+.favoriteRecipeItem {
+    background-color: #464342; /* Fondo blanco para los elementos */
+    border-radius: 15px;
+    overflow: hidden; /* Para que las imágenes se ajusten al borde redondeado */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favoriteRecipeItem:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.favoriteRecipeImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.favoriteRecipeName {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}

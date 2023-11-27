@@ -140,9 +140,7 @@ function UserProfile() {
                     <h1>{userData.name}</h1>
                     <h2>{userData.last_name}</h2>
                     <p>{userData.email}</p>
-                    <div className="favorites">
-                        Mis Favoritas <span className="heart">❤️</span>
-                    </div>
+                    
                 </div>
                 <button className="settingsButton" onClick={() => setShowChangePassword(!showChangePassword)}>
                     <i className="fas fa-key"></i>

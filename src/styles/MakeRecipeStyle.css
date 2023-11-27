@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.makeRecipePage {
+    background-color: #1a1a1a; /* Fondo específico para esta página */
+    min-height: 100vh; /* Altura mínima para cubrir toda la altura de la vista */
+    padding: 20px; /* Espacio alrededor del contenedor para mantener la consistencia */
+    box-sizing: border-box; /* Para incluir el padding en el cálculo de la altura y el ancho */
+}
+
+.makeRecipeContainer {
+    max-width: 800px;
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 25px;
+    background-color: #262626;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+   
+}
+.makeRecipeContainer h2 {
+    text-align: center;
+    color: #ffa500; /* Color para el título */
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.makeRecipeContainer input,
+.makeRecipeContainer select,
+.makeRecipeContainer textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #444; /* Borde de los campos */
+    border-radius: 6px;
+    background-color: #333; /* Fondo de los campos */
+    color: #fff; /* Color del texto en los campos */
+    box-sizing: border-box;
+    font-size: 1.1em;
+}
+
+.makeRecipeContainer textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.makeRecipeContainer button {
+    background-color: #ffa500;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.makeRecipeContainer button:hover {
+    background-color: #ff8c00;
+}
+
+.ingredientInput {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.ingredientInput input {
+    flex-grow: 1;
+}
+
+/* Estilo para el botón de eliminar ingrediente */
+.makeRecipeContainer .ingredientInput .removeIngredientBtn {
+    padding: 6px 10px;
+    background-color: #ff4d4d; /* Color rojo para indicar eliminación */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.makeRecipeContainer .ingredientInput .removeIngredientBtn:hover {
+    background-color: #ff3333; /* Un rojo ligeramente más oscuro al pasar el cursor */
+}
+
+
+
+
+/* Estilos para etiquetas antes de áreas de texto o listas de ingredientes */
+.makeRecipeContainer label {
+    display: block;
+    margin-top: 25px; /* Espacio antes de las etiquetas */
+    color: #ffa500; /* Color del texto para las etiquetas */
+    font-weight: bold; /* Texto en negrita para las etiquetas */
+}
+
+.saveRecipeBtn {
+    width: 100%;
+    padding: 15px;
+    
+}
+
+
+
+@media (max-width: 768px) {
+    .makeRecipeContainer {
+        padding: 15px;
+    }
+
+    .ingredientInput {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .removeIngredientBtn {
+        width: 100%;
+        margin-top: 10px; /* Espacio adicional en móviles */
+    }
+
+    .makeRecipeContainer h2 {
+        font-size: 1.5em;
+    }
+
+    .makeRecipeContainer button {
+        padding: 10px 15px;
+    }
+}

@@ -6,6 +6,11 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Profile from './components/Profile'
 import Recipe from './components/Recipe';
+import MakeRecipe from './components/MakeRecipe';
+import AdminRecipes from './components/AdminRecipes';
+import FavoriteRecipes from './components/FavoriteRecipes';
+import Categories from './components/Categories';
+
 
 function App() {
   return (
@@ -16,7 +21,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} /> 
         <Route path="/profile" element={<Profile />} /> 
-        <Route path='/recipeTest' element={<Recipe/>}/>
+        <Route path="/recipe/:id" element={<Recipe />} />
+        <Route path="/makeRecipe" element={<MakeRecipe />} />
+        <Route path="/adminRecipes" element={<AdminRecipes />} />
+        <Route path="/favoriteRecipes" element={<FavoriteRecipes/>} />
+        <Route path="/categories" element={<Categories/>} />
       </Routes>
     </Router>
   );
