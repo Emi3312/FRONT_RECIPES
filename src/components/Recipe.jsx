@@ -141,16 +141,21 @@ function Recipe() {
                 {recipe.category_name && <p className="categoryNameRecipe">Categoría: {recipe.category_name}</p>} {/* Muestra el nombre de la categoría */}
                 <p><strong>Porciones:</strong> {recipe.no_portions}</p>
                 <p><strong>Dificultad:</strong> {recipe.difficulty}</p>
-                <h3>Ingredientes</h3>
-                <ul>
-                    {recipe.ingredients && recipe.ingredients.map((ingredient, index) => (
-                        <li key={index}>
-                            <span className="ingredientText">{ingredient.name} - {ingredient.quantity} {ingredient.unit_of_measure}</span>
-                        </li>
-                    ))}
-                </ul>
-                <h3>Preparación</h3>
-                <p>{recipe.desc_preparation}</p>
+                <div className="ingredientsSection">
+                    <h3>Ingredientes</h3>
+                    <ul className="ingredientList">
+                        {recipe.ingredients && recipe.ingredients.map((ingredient, index) => (
+                            <li key={index} className="ingredientItem">
+                                <span className="ingredientName">{ingredient.name}</span>
+                                <span className="ingredientQuantity">{ingredient.quantity} {ingredient.unit_of_measure}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="preparationSection">
+                    <h3>Preparación</h3>
+                    <div className="preparationContent">{recipe.desc_preparation}</div>
+                </div>
             </div>
         </div>
     );
